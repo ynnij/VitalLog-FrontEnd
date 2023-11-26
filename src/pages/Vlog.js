@@ -21,15 +21,11 @@ const Vlog = () => {
           로그인 상태에서 보여줄 페이지
           <Route path="/user" element={<UserPage />} />
           <Route path="/information" element={<InformationPage />} />
-        </Routes>
-        {/* ) : ( */}
-        <Routes>
           <Route path="/main" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/information" element={<InformationPage />} />
-
-          {/* 마이페이지 추가 내용 */}
+          {/* 마이페이지 추가 내용 & </Route><Route>삭제 */}
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/total" element={<TotalPage />} />
           <Route path="/today" element={<TodayLogPage />} />
