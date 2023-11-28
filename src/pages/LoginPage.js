@@ -26,7 +26,7 @@ const LoginPage = () => {
       return;
     }
 
-    let url = `http://172.30.1.81:8080/login`;
+    let url = `http://10.125.121.216:8080/login`;
     e.preventDefault();
     axios
       .post(url, { id, password })
