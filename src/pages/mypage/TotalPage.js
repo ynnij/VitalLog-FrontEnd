@@ -9,8 +9,11 @@ const TotalPage = () => {
       </header>
       <div className="grow flex py-8 mb-4  bg-white text-gray-800">
         <SideBar page={"total"} />
-        <main className="mx-10 border-2	w-full rounded-lg shadow">
-          전체 로그보기
+        <main className="mx-10 p-10 border-2	w-full rounded-lg shadow">
+          <div className="h-full">
+            <div className="text-2xl font-bold">전체 로그보기</div>
+            
+          </div>
         </main>
       </div>
     </div>

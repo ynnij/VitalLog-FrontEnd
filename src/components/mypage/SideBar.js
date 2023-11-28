@@ -7,6 +7,7 @@ const SideBar = ({ page }) => {
   const [data, setData] = useState();
   const [userdata, setUserData] = useState();
   const [menuitems, setMenuitems] = useState();
+
   const menulist = [
     ["mypage", "오늘의 로그보기"],
     ["today", "오늘의 로그 기록하기"],
@@ -14,11 +15,20 @@ const SideBar = ({ page }) => {
     ["period", "기간별 로그보기"],
   ];
 
+  const getDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + (date.getDate())).slice(-2);
+    return `${year}-${month}-${day}`;
+  }
+
   useEffect(() => {
     const menuItem = menulist.map((menu) => {
       if (menu[0] === page)
         return (
           <MenuItem
+            key={`${menu}MenuItem`}
             active={true}
             className="text-center text-xl"
             component={<Link to={`/${menu[0]}`} />}
@@ -29,6 +39,7 @@ const SideBar = ({ page }) => {
       else
         return (
           <MenuItem
+            key={`${menu}MenuItem`}
             className="text-center"
             component={<Link to={`/${menu[0]}`} />}
           >
@@ -38,15 +49,21 @@ const SideBar = ({ page }) => {
     });
     setMenuitems(menuItem);
 
-    fetch("http://172.30.1.81:8080/api/vitallog/mypage/user1?date=2023-11-19")
+
+    fetch(`http://10.125.121.216:8080/api/vitallog/mypage/user1?date=${getDate()}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": 'application/json',
+        Authorization: localStorage.getItem("token")
+      }
+    })
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         setData(data);
 
         let todayTotalLog = (
           <ul className="text-center">
-            <li className="text-2xl">2023-11-23</li>
+            <li className="text-2xl">{getDate()}</li>
             <li>{data.totalExerTime === null ? 0 : data.totalExerTime} min </li>
             <li>{data.totalKcal} kcal</li>
           </ul>
