@@ -30,7 +30,7 @@ const LogChart = ({caption, logData }) => {
           },
           title: {
             display: true,
-            text: 'Total Log',
+            text : `${caption}`,
           },
         },
       };

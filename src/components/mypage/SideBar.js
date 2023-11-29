@@ -65,7 +65,7 @@ const SideBar = ({ page }) => {
           <ul className="text-center">
             <li className="text-2xl">{getDate()}</li>
             <li>{data.totalExerTime === null ? 0 : data.totalExerTime} min </li>
-            <li>{data.totalKcal} kcal</li>
+            <li>{data.totalKcal.toFixed(2)} kcal</li>
           </ul>
         );
         setUserData(todayTotalLog);
