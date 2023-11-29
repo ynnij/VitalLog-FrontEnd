@@ -50,7 +50,9 @@ const TodayLogPage = () => {
       "exerid": exerid
     }
     axios
-      .post(url,data)
+      .post(url,data, {headers:{
+        Authorization : localStorage.getItem("token")
+      }})
       .then(function (response) {
         window.location.reload();
       })

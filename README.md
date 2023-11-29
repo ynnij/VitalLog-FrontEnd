@@ -2,5 +2,4 @@
 
 `npm install react-pro-sidebar`
 
-`npm install recoil`
-
+`npm install --save chart.js react-chartjs-2`
