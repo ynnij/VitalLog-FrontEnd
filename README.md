@@ -2,6 +2,9 @@
 
 `npm install react-pro-sidebar`
 
-d`npm install --save chart.js react-chartjs-2` 
+`npm install --save chart.js react-chartjs-2` 
 
 `npm install chartjs-plugin-annotation`
+
+`npm i react-alice-carousel`
+
