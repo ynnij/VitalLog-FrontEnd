@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SideBar from "../../components/mypage/SideBar";
 import VlogNav from "../VlogNav";
 import LogChart from "../../components/mypage/LogChart";
@@ -23,7 +23,6 @@ const TotalPage = () => {
       }
     }).then(resp => resp.json())
       .then(data => {
-        console.log(data.userlog)
         setUserlog(data.userlog);
         setDailyTotalLog(data.dailyTotalLog);
       })

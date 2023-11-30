@@ -1,8 +1,6 @@
-
-
 const LogTable = ({userlog}) => {
     const tbodyTags = userlog && userlog.map((log, idx)=>{
-        return <tr className="odd:bg-white even:bg-gray-50 border-b ">
+        return <tr key={log.seq} className="odd:bg-white even:bg-gray-50 border-b ">
                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                             {log.exerDate}
                         </th>
