@@ -23,12 +23,12 @@ const LogCardList = ({ data }) => {
 
     const responsive = {
         0: { items: 1 },
-        568: { items: 2 },
+        768 : { items: 2 },
         1024: { items: 4 },
     };
 
     return (
-        <div className='w-[1200px]  items-center flex '>
+        <div className='lg:w-[1200px]  overflow-auto items-center flex '>
             <AliceCarousel
                 mouseTracking
                 items={createItems()}

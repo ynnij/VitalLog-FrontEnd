@@ -71,7 +71,7 @@ const TodayLogPage = () => {
       <header className="p-2 sm:p-6">
         <VlogNav isUserPage={true} />
       </header>
-      <div className="grow flex py-8 mb-4  bg-white text-gray-800">
+      <div className="grow flex py-8 mb-4 px-20 bg-white text-gray-800">
         <SideBar page={"today"} />
         <main className="mx-10 p-10 border-2	w-full rounded-lg shadow">
           <div className="h-full">
